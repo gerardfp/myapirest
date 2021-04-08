@@ -20,7 +20,6 @@ express()
 
     .get('/delete/:titulo', async (req, res) => {
         let rowsDeleted = await db.mensajes.eliminar(req.params.titulo);
-        console.log(rowsDeleted);
         if(rowsDeleted > 0) res.send(200);
         else res.send(404);
 
